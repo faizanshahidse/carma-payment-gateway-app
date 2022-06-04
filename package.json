@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "npm-run-all babel",
-    "server": "nodemon ./dist-server/bin/www",
-    "dev": "npm-run-all build server",
-    "babel": "babel ./server --out-dir dist-server",
-    "clean": "rimraf dist-server"
+    "server": "nodemon --exec babel-node ./server/bin/www"
   },
   "dependencies": {
     "@babel/cli": "^7.17.10",
