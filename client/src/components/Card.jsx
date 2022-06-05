@@ -3,7 +3,7 @@ import Styles from '../Styles';
 import { Form, Field } from 'react-final-form';
 import {
   formatCreditCardNumber,
-  formatCVC,
+  formatCVV,
   formatExpirationDate,
 } from '../utils/creditCard';
 
@@ -21,10 +21,10 @@ const Card = ({ onSubmit }) => (
         active,
       }) => {
         return (
-          <form onSubmit={() => handleSubmit(values)}>
+          <form onSubmit={handleSubmit}>
             <div>
               <Field
-                name='number'
+                name='cardNo'
                 component='input'
                 type='text'
                 pattern='[\d| ]{16,22}'
@@ -34,7 +34,7 @@ const Card = ({ onSubmit }) => (
             </div>
             <div>
               <Field
-                name='name'
+                name='cardHolderName'
                 component='input'
                 type='text'
                 placeholder='Name'
@@ -42,25 +42,33 @@ const Card = ({ onSubmit }) => (
             </div>
             <div>
               <Field
-                name='expiry'
+                name='expiryDate'
                 component='input'
                 type='text'
-                value={values.expiry}
                 pattern='\d\d/\d\d'
                 placeholder='Valid Thru'
                 format={formatExpirationDate}
               />
               <Field
-                name='cvc'
+                name='cvv'
                 component='input'
                 type='text'
                 pattern='\d{3,4}'
-                placeholder='CVC'
-                format={formatCVC}
+                placeholder='CVV'
+                format={formatCVV}
               />
             </div>
             <div className='buttons'>
-              <button type='submit' disabled={submitting}>
+              <button
+                type='submit'
+                disabled={
+                  submitting ||
+                  !values.cardNo ||
+                  !values.cardHolderName ||
+                  !values.expiryDate ||
+                  !values.cvv
+                }
+              >
                 Submit
               </button>
               <button

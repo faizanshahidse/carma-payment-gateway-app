@@ -8,11 +8,13 @@ const addCreditCardDetails = asyncHandler(async (req, res) => {
   const { cardNo, cvv, cardHolderName, expiryDate } = req.body;
 
   const data = {
-    cardNo,
+    cardNo: cardNo.replace(/\s/g, ''),
     cvv,
     cardHolderName,
     expiryDate,
   };
+
+  console.log('data..............', data);
 
   const { card_detail: CardDetail } = db;
 

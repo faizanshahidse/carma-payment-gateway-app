@@ -8,10 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "payment": "^2.4.6",
+    "@reduxjs/toolkit": "^1.8.2",
+    "axios": "^0.27.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-final-form": "^6.5.9",
+    "react-redux": "^8.0.2",
     "styled-components": "^5.3.5"
   },
   "devDependencies": {

@@ -1,5 +1,3 @@
-import Payment from 'payment';
-
 function clearNumber(value = '') {
   return value.replace(/\D+/g, '');
 }
@@ -8,43 +6,19 @@ function formatCreditCardNumber(value) {
   if (!value) {
     return value;
   }
-
-  const issuer = Payment.fns.cardType(value);
   const clearValue = clearNumber(value);
-  let nextValue;
 
-  switch (issuer) {
-    case 'amex':
-      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
-        4,
-        10,
-      )} ${clearValue.slice(10, 15)}`;
-      break;
-    case 'dinersclub':
-      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
-        4,
-        10,
-      )} ${clearValue.slice(10, 14)}`;
-      break;
-    default:
-      nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
-        4,
-        8,
-      )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 19)}`;
-      break;
-  }
+  const nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+    4,
+    8,
+  )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
 
   return nextValue.trim();
 }
 
-function formatCVC(value, prevValue, allValues = {}) {
+function formatCVV(value) {
   const clearValue = clearNumber(value);
-  let maxLength = 4;
-
-  if (allValues.number) {
-    const issuer = Payment.fns.cardType(allValues.number);
-    maxLength = issuer === 'amex' ? 4 : 3;
-  }
+  const maxLength = 3;
 
   return clearValue.slice(0, maxLength);
 }
@@ -59,4 +33,4 @@ function formatExpirationDate(value) {
   return clearValue;
 }
 
-export { formatCreditCardNumber, formatCVC, formatExpirationDate };
+export { formatCreditCardNumber, formatCVV, formatExpirationDate };

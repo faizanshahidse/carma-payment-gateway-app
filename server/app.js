@@ -2,6 +2,7 @@ import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import logger from 'morgan';
+import cors from 'cors';
 
 import sequelize from './config/db';
 import indexRouter from './routes/index';
@@ -12,7 +13,13 @@ import errorHandler from './middlewares/errorHandler';
 
 // dotenv.config({ path: `${__dirname}` });
 
+const corsOptions = {
+  origin: process.env.ALLOWED_URLS.split(','),
+};
+
 const app = express();
+
+app.use(cors(corsOptions));
 
 app.use(logger('dev'));
 app.use(express.json());
