@@ -12,13 +12,7 @@
     "password": "12345",
     "database": "carma",
     "host": "localhost",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "options": {
-        "useUTC": false,
-        "dateFirst": 1
-      }
-    }
+    "dialect": "postgres"
   },
 
   "production": {
@@ -26,12 +20,6 @@
     "password": "12345",
     "database": "carma",
     "host": "localhost",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "options": {
-        "useUTC": false,
-        "dateFirst": 1
-      }
-    }
+    "dialect": "postgres"
   }
 }

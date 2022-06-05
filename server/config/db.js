@@ -1,10 +1,10 @@
 import { Sequelize } from 'sequelize';
 
-import db from './config.json';
+import config from './config.json';
 
 const env = process.env.NODE_ENV || 'development';
 
-const conn = db[env];
+const conn = config[env];
 
 const sequelize = new Sequelize(conn.databse, conn.username, conn.password, {
   host: conn.host,

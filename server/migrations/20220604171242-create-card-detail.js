@@ -11,11 +11,11 @@ module.exports = {
       cardNo: {
         allowNull: false,
         unique: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       cvv: {
         allowNull: false,
-        type: Sequelize.INTEGER(3),
+        type: Sequelize.STRING,
       },
       cardHolderName: {
         allowNull: false,

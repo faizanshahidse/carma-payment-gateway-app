@@ -3,6 +3,6 @@ const router = express.Router();
 
 import { addCreditCardDetails } from '../controllers/payments';
 
-router.get('/add', addCreditCardDetails);
+router.post('/add', addCreditCardDetails);
 
 export default router;

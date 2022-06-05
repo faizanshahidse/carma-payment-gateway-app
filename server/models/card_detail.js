@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   card_detail.init(
     {
-      cardNo: { allowNull: false, unique: true, type: DataTypes.INTEGER },
-      cvv: { allowNull: false, type: DataTypes.INTEGER(3) },
+      cardNo: { allowNull: false, unique: true, type: DataTypes.STRING },
+      cvv: { allowNull: false, type: DataTypes.STRING },
       cardHolderName: { allowNull: false, type: DataTypes.STRING },
       expiryDate: { allowNull: false, type: DataTypes.DATE },
     },
