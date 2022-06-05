@@ -18,8 +18,12 @@
     "express-async-handler": "^1.2.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
+    "joi": "^17.6.0",
     "morgan": "~1.9.1",
-    "rimraf": "^3.0.2"
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "rimraf": "^3.0.2",
+    "sequelize": "^6.20.1"
   },
   "devDependencies": {
     "concurrently": "^7.2.1",
