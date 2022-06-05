@@ -4,7 +4,11 @@
     "password": "12345",
     "database": "carma",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateFirst": 1
+    }
   },
 
   "staging": {
@@ -12,7 +16,11 @@
     "password": "12345",
     "database": "carma",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateFirst": 1
+    }
   },
 
   "production": {
@@ -20,6 +28,10 @@
     "password": "12345",
     "database": "carma",
     "host": "localhost",
-    "dialect": "postgres"
+    "dialect": "postgres",
+    "dialectOptions": {
+      "useUTC": false,
+      "dateFirst": 1
+    }
   }
 }
