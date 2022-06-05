@@ -1,11 +1,8 @@
 import React from 'react';
+import CreditCardPage from './pages/CreditCard';
 
 function App() {
-  return (
-    <div>
-      <p>Hello Reactjs App...</p>
-    </div>
-  );
+  return <CreditCardPage />;
 }
 
 export default App;
