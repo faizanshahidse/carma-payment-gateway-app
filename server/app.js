@@ -7,11 +7,6 @@ import cors from 'cors';
 import sequelize from './config/db';
 import indexRouter from './routes/index';
 import errorHandler from './middlewares/errorHandler';
-// import dotenv from 'dotenv';
-
-// console.log('dirname,,,,,,', `${__dirname}`);
-
-// dotenv.config({ path: `${__dirname}` });
 
 const corsOptions = {
   origin: process.env.ALLOWED_URLS.split(','),

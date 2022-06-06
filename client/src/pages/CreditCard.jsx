@@ -7,9 +7,7 @@ import { addStr } from '../utils/appendString';
 
 const CreditCardPage = () => {
   const dispatch = useDispatch();
-  const { newCreditCard, loading, err, done } = useSelector(
-    (state) => state.creditCard,
-  );
+  const { err, done } = useSelector((state) => state.creditCard);
 
   const onSubmit = (values) => {
     values.cardNo = values.cardNo.slice(0, 19);
@@ -21,6 +19,7 @@ const CreditCardPage = () => {
     dispatch(add(values));
   };
 
+  /*............Popup show on Success or Error..............*/
   useEffect(() => {
     if (done) {
       alert('Credit card details has been added successfully!');

@@ -38,10 +38,11 @@ postgres
 
 > npx sequelize-cli db:migrate
 
-### Package Installation
+# Package Installation
 
-./ npm install
-./client npm install
+### ./ npm install
+
+### ./client npm install
 
 # Running the Application
 

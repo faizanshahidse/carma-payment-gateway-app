@@ -10,18 +10,13 @@ import http from 'http';
 import path from 'path';
 
 const debug = debugLib('server:server');
-console.log('dirname.......', path.resolve('./server/development.env'));
-// dotenv.config({
-//   path: path.resolve('./server/development.env'),
-// });
+
 /**
  * Get port from environment and store in Express.
  */
 
 const port = normalizePort(process.env.PORT || '5000');
 app.set('port', port);
-
-console.log('PortTTTT..........', process.env.PORT);
 
 /**
  * Create HTTP server.

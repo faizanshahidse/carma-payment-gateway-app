@@ -11,27 +11,7 @@
     }
   },
 
-  "staging": {
-    "username": "postgres",
-    "password": "12345",
-    "database": "carma",
-    "host": "localhost",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false,
-      "dateFirst": 1
-    }
-  },
+  "staging": {},
 
-  "production": {
-    "username": "postgres",
-    "password": "12345",
-    "database": "carma",
-    "host": "localhost",
-    "dialect": "postgres",
-    "dialectOptions": {
-      "useUTC": false,
-      "dateFirst": 1
-    }
-  }
+  "production": {}
 }
