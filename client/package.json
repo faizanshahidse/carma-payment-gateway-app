@@ -1,5 +1,6 @@
 {
   "name": "carma-payment-gateway",
+  "author": "Faizan Shahid",
   "private": true,
   "version": "0.0.0",
   "scripts": {

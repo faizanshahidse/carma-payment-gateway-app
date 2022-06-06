@@ -1,5 +1,6 @@
 {
-  "name": "server",
+  "name": "carma-payment-gateway-backend",
+  "author": "Faizan Shahid",
   "version": "0.0.0",
   "private": true,
   "scripts": {
