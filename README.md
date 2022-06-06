@@ -12,11 +12,11 @@
 
 If you face babel-node is not recognized as an internal or external command. Then run these commands in your terminal in main directory.
 
-### npm i @babel/node
+> npm i @babel/node
 
-### npm i @babel/cli
+> npm i @babel/cli
 
-### npm i @babel/core
+> npm i @babel/core
 
 # Database Configuration
 
