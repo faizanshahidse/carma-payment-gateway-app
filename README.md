@@ -1,4 +1,4 @@
-# carma-payment-gateway-app
+# Carma Payment Gateway App
 
 ### Dependencies
 
@@ -38,7 +38,7 @@ Bycrypt.js library is used to encrypt credit card and cvv and used hashing algor
 
 Luhn Algorithm is used to verify any credit card number. Joi library is used for backend validation and it has inbuilt method based on Luhn Algorithm to verify credit card number.
 
-# Qestions
+# Questions
 
 ### 1. What is the result of this code in the console?
 
