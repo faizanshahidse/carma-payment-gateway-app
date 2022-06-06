@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Card from '../components/Card';
-import { add } from '../features/creditCardSlice';
+import { add, clearCardDetails } from '../features/creditCardSlice';
 import { addStr } from '../utils/appendString';
 
 const CreditCardPage = () => {
   const dispatch = useDispatch();
+  const { newCreditCard, loading, err, done } = useSelector(
+    (state) => state.creditCard,
+  );
 
   const onSubmit = (values) => {
     values.cardNo = values.cardNo.slice(0, 19);
@@ -17,6 +20,16 @@ const CreditCardPage = () => {
 
     dispatch(add(values));
   };
+
+  useEffect(() => {
+    if (done) {
+      alert('Credit card details has been added successfully!');
+    } else if (err.message) {
+      alert(err.message);
+    }
+
+    return () => dispatch(clearCardDetails());
+  }, [done, err.message]);
 
   return <Card onSubmit={onSubmit} />;
 };

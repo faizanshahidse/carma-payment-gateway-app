@@ -32,7 +32,14 @@ const creditCard = createSlice({
     loading: false,
     done: false,
   },
-  reducers: {},
+  reducers: {
+    clearCardDetails(state, action) {
+      state.newCreditCard = {};
+      state.err = '';
+      state.loading = false;
+      state.done = false;
+    },
+  },
   extraReducers: {
     /*......... Add Credit Card .................*/
     [add.pending]: (state, action) => {
@@ -41,7 +48,7 @@ const creditCard = createSlice({
     [add.fulfilled]: (state, action) => {
       state.loading = false;
       state.done = true;
-      state.newChat = action.payload.data;
+      state.newCreditCard = action.payload.data;
     },
     [add.rejected]: (state, action) => {
       state.loading = false;
@@ -50,6 +57,8 @@ const creditCard = createSlice({
   },
 });
 
-const { reducer } = creditCard;
+const { reducer, actions } = creditCard;
+
+export const { clearCardDetails } = actions;
 
 export default reducer;
