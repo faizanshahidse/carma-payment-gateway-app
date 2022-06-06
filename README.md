@@ -26,6 +26,14 @@ If you face babel-node is not recognized as an internal or external command. The
 
 Create postgres database named "carma".
 
+### Username
+
+postgres
+
+### Password
+
+12345
+
 ### Run Migrations
 
 > npx sequelize-cli db:migrate
